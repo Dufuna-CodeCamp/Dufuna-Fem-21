@@ -33,7 +33,7 @@ IF [%node_version%]==[] (
     msiexec.exe /i node.msi /qn /norestart
     @REM powershell -Command "Start-Process cmd -Verb RunAs"
 ) else (
-    echo "node is available"
+    echo [92m node is available [0m
 )
 
 cd %test_folder%
@@ -44,7 +44,7 @@ FOR /F "usebackq" %%i IN (`npm ls --depth=0 ^| find "selenium-webdriver" /c`) DO
 cd %home_directory%
 
 IF %selenium_wc% GTR 0 (
-    echo "selenium-webdriver is available"
+    echo [92m selenium-webdriver is available [0m
 ) ELSE (
     @ECHO off
     cd %test_folder%\setup\winos
@@ -56,7 +56,7 @@ FOR /F "usebackq" %%i IN (`dir %path_to_chrome_driver% ^| find "chromedriver.exe
 
 :: chromedriver check & installation
 IF %chromedriver_wc% GTR 0 (
-    echo "chromedriver is available"
+    echo [92m chromedriver is available [0m
 ) ELSE (
     @ECHO off
     curl -S -o chromedriver_win32.zip https://chromedriver.storage.googleapis.com/%chrome_driver_version%/chromedriver_win32.zip
@@ -79,9 +79,13 @@ IF [%mocha_version%] == [] (
     cd "%APPDATA%\npm\"
     copy /Y "%test_folder:"=%\setup\winos\file.cmd" mocha.cmd
 ) ELSE (
-    echo "mocha is available"
+    echo [92m mocha is available [0m
 )
 
 @ECHO on
 ECHO.
 ECHO [92mSetup is Complete![0m
+
+@ECHO off
+
+cd "%test_folder:"=%"

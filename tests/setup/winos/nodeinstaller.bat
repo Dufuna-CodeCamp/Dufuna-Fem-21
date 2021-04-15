@@ -1,5 +1,7 @@
 @REM This is the installer tool for Dufuna Code Reviews
 
+@ECHO off
+
 cd "%userprofile%"
 
 For /F "usebackq" %%v IN (`node -v`) DO set node_version=%%v
@@ -15,7 +17,7 @@ IF [%node_version%]==[] (
     )
     msiexec.exe /i node.msi /qn /norestart
     del node.msi
-    echo "Please restart command prompt as an administrator"
+    echo [7m Please restart command prompt as an administrator [0m
 ) else (
-    echo "node is available"
+    echo [92m node is available [0m
 )
