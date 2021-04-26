@@ -1,6 +1,5 @@
 var phantomcss = require('phantomcss');
 var file_path = casper.cli.get('file_path');
-// var file_path = "/Users/folashadedaniel/Desktop/dufuna/css-task-solution/HTML/product.html";
 
 phantomcss.init({
 	screenshotRoot:			'screenshots/baselines',

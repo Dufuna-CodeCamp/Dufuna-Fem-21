@@ -104,3 +104,4 @@ path_to_phantomjs=$test_folder/node_modules/phantomjs/lib/phantom/bin/
 echo export PATH=\"$PATH:$path_to_phantomjs\" > ~/etc/environment
 
 echo -e "${BOLD}Setup is Complete!"
+echo -e "${BOLD}Please ensure you have installed the latest version of Chrome!"

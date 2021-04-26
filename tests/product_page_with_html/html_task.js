@@ -9,9 +9,13 @@ describe("Testing HTML Task", function () {
         .forBrowser('chrome')
         .build();
 
-    before(function setupWebdriver(done) {
+    before("setupWebdriver", async() => {
         var file_url = `file://${file_path}`;
-        driver.get(file_url).then(done);
+        try {
+            await driver.get(file_url);
+        } catch( error ) {
+            console.error("Update your chrome version!");
+        }
     });
 
     after(function() {

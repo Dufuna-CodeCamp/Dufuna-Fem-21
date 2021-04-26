@@ -56,7 +56,7 @@ else
     num_of_tests=0
 fi
 
-$test_folder/node_modules/casperjs/bin/casperjs test $PWD/csstest.js --concise --file_path=$submission_directory/$folder_name/$file
+casperjs test $PWD/csstest.js --concise --file_path=$submission_directory/$folder_name/$file
 
 if [ -d $failures_dir ]
 then

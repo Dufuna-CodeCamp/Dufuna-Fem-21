@@ -89,3 +89,4 @@ echo export PATH=\"$path_to_phantomjs:\$PATH\" >> ~/.bash_profile
 echo export PATH=\"$path_to_phantomjs:\$PATH\" >> ~/.zshrc
 
 echo -e "${BOLD}Setup is Complete!"
+echo -e "${BOLD}Please ensure you have installed the latest version of Chrome!"
