@@ -90,18 +90,14 @@ if [[ $mocha_version =~ ^[0-9] ]]
 then
     echo "mocha is available"
 else
-    sudo npm install --global mocha
-    sudo npm install --global mochawesome
-    sudo npm install --prefix $test_folder chai
+    npm install --global mocha
+    npm install --global mochawesome
+    npm install --prefix $test_folder chai
 fi
 
-sudo npm install --prefix $test_folder phantomjs
-sudo npm install --prefix $test_folder phantomcss
-sudo npm install --prefix $test_folder casperjs
-
-path_to_phantomjs=$test_folder/node_modules/phantomjs/lib/phantom/bin/
-
-echo export PATH=\"$PATH:$path_to_phantomjs\" > ~/etc/environment
+npm install --prefix $test_folder phantomjs
+npm install --prefix $test_folder phantomcss
+npm install --global casperjs
 
 echo -e "${BOLD}Setup is Complete!"
 echo -e "${BOLD}Please ensure you have installed the latest version of Chrome!"
