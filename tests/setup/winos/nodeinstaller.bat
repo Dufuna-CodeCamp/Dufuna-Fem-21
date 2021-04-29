@@ -2,8 +2,11 @@
 
 @ECHO off
 
+<<<<<<< HEAD
 set project_working_directory="%~dp0..\..\..\"
 set test_folder="%project_working_directory:"=%\tests"
+=======
+>>>>>>> d96116a3160d026b13d9aa213194322751c074ae
 cd "%userprofile%"
 
 For /F "usebackq" %%v IN (`node -v`) DO set node_version=%%v
