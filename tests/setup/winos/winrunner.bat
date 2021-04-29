@@ -10,7 +10,7 @@ cd %home_directory%
 
 For /F "usebackq" %%v IN (`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE`) DO set chrome_driver_version=%%v
 
-set path_to_chrome_driver="%homedrive%\bin"
+set path_to_chrome_driver="%homedrive%\Program Files\nodejs"
 
 For /F "usebackq" %%v IN (`node -v`) DO set node_version=%%v
 
@@ -32,7 +32,6 @@ IF [%node_version%]==[] (
     )
     msiexec.exe /i node.msi /qn /norestart
     del node.msi
-    @REM powershell -Command "Start-Process cmd -Verb RunAs"
 ) else (
     echo [92m node is available [0m
 )
